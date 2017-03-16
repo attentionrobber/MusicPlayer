@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hyunseok.android.musicplayer_newversion.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout"
+        android:layout_below="@+id/toolbar"
+        app:tabIndicatorColor="@android:color/black"
+        android:background="@drawable/white_side">
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tabLayout"
+        android:layout_above="@+id/constraintLayout">
+    </android.support.v4.view.ViewPager>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/white_side">
+
+        <ImageView
+            android:id="@+id/imgView"
+            app:srcCompat="@mipmap/default_album_image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:scaleType="fitXY"
+            android:layout_height="90dp"
+            android:layout_width="90dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+        <SeekBar
+            android:id="@+id/seekBar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/imgView"
+            app:layout_constraintBottom_toTopOf="@+id/imgbtn_play"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titleArtist"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="1.0"
+            android:thumbTint="#000000"
+            android:progressTint="#000000"/>
+        <TextView
+            android:id="@+id/tv_titleArtist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title - artist"
+            app:layout_constraintLeft_toRightOf="@+id/imgView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp" />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            app:layout_constraintLeft_toRightOf="@+id/imgView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="144dp"
+            android:layout_marginLeft="144dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintBottom_toTopOf="@+id/imgbtn_next"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_repeat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@android:drawable/ic_menu_rotate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/white"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_prev"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp" />
+        <ImageButton
+            android:id="@+id/imgbtn_play"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@android:drawable/ic_media_play"
+            android:background="@drawable/white"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_next"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
+        <ImageButton
+            android:id="@+id/imgbtn_prev"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@android:drawable/ic_media_previous"
+            android:background="@drawable/white"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_play"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
+        <ImageButton
+            android:id="@+id/imgbtn_next"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@android:drawable/ic_media_next"
+            android:background="@drawable/white"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_shuffle"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp" />
+        <ImageButton
+            android:id="@+id/imgbtn_shuffle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@android:drawable/ic_popup_sync"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="5dp" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>
