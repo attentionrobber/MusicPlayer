@@ -19,10 +19,10 @@ import java.util.List;
 
 public class PlayerAdapter extends PagerAdapter {
 
-    List<Music> datas;
-    Context context;
+    private List<Music> datas;
+    private Context context;
 
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
 
     public PlayerAdapter(List<Music> datas, Context context) {
         this.datas = datas;
